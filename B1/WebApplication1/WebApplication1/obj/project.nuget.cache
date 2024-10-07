@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "EuTAsPC6fxQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Hoang Hieu\\Documents\\Code learn\\Hoc_Ky_3\\SEM3-4.-ASP.Net-Core\\B1\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hoang Hieu\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0-rc.1.24431.7\\microsoft.extensions.dependencyinjection.9.0.0-rc.1.24431.7.nupkg.sha512",
+    "C:\\Users\\Hoang Hieu\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0-rc.1.24431.7\\microsoft.extensions.dependencyinjection.abstractions.9.0.0-rc.1.24431.7.nupkg.sha512",
+    "C:\\Users\\Hoang Hieu\\.nuget\\packages\\microsoft.extensions.logging\\9.0.0-rc.1.24431.7\\microsoft.extensions.logging.9.0.0-rc.1.24431.7.nupkg.sha512",
+    "C:\\Users\\Hoang Hieu\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0-rc.1.24431.7\\microsoft.extensions.logging.abstractions.9.0.0-rc.1.24431.7.nupkg.sha512",
+    "C:\\Users\\Hoang Hieu\\.nuget\\packages\\microsoft.extensions.options\\9.0.0-rc.1.24431.7\\microsoft.extensions.options.9.0.0-rc.1.24431.7.nupkg.sha512",
+    "C:\\Users\\Hoang Hieu\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0-rc.1.24431.7\\microsoft.extensions.primitives.9.0.0-rc.1.24431.7.nupkg.sha512",
+    "C:\\Users\\Hoang Hieu\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0-rc.1.24431.7\\system.diagnostics.diagnosticsource.9.0.0-rc.1.24431.7.nupkg.sha512"
+  ],
+  "logs": []
+}
