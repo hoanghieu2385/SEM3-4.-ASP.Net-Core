@@ -119,15 +119,15 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
   3.  thêm đoạn code sau vào đầu class EduDbContext:
 
-        public EduDbContext() : base()
-        {
+            public EduDbContext() : base()
+            {
 
-        }
+            }
 
-        public EduDbContext(DbContextOptions<EduDbContext> options) : base(options)
-        {
+            public EduDbContext(DbContextOptions<EduDbContext> options) : base(options)
+            {
 
-        }
+            }
 
   4.  rồi thêm dòng:
       modelBuilder.Entity<Class>();
