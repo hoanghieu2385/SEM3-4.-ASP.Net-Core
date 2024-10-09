@@ -38,11 +38,11 @@ Buổi 1:
 - tạo view kiểu tự sinh code: trong hàm tạo (dòng 7 -> 10) -> chuột phải -> add view... -> chọn kiểu view cần chọn
 
 - ta có thể sửa đổi url thấy bằng cách:
-
-using Microsoft.AspNetCore.Mvc;
-
-namespace WebApplication1.Controllers
 {
+ 
+    using Microsoft.AspNetCore.Mvc;
+
+    namespace WebApplication1.Controllers
 
     {
         [Route("/product2")]        <------ hoặc  [Route("product2")] đều thấy chạy bth
