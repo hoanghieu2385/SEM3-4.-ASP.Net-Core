@@ -133,7 +133,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
             modelBuilder.Entity<Class>();
 
-      ở trong OnModelCreating để được đoạn như sau:
+      ở trong **OnModelCreating** để được đoạn như sau:
 
           protected override void OnModelCreating(ModelBuilder modelBuilder)
           {
