@@ -1,11 +1,11 @@
 # SEM3-4.-ASP.Net-Core
 Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
-cài đặt visual studio
-SQL server:
-Azure data studio --------------------- ( FREE )
-Data grid ------------------------------( Mất phí 💲 )
-SSMS (SQL Server Management Studio) --- ( FREE )
+- cài đặt visual studio
+- SQL server:
+    + Azure data studio --------------------- ( FREE )
+    + Data grid ------------------------------( Mất phí 💲 )
+    + SSMS (SQL Server Management Studio) --- ( FREE )
 
 ------------------------------------------------
 Buổi 1:
