@@ -90,39 +90,106 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
 - các bước tạo project:
 
-  1. tạo ra 1 file class.cs trong Models
+  1. tạo ra 1 file class.cs trong Models:
+    
+    public class Class
+    {
+        public int Id { get; set; }
+        public string ClassName { get; set; }
+    }
+
   2. tạo ra 1 file EduDbContext ở ngoài, kế thừa DbContext
     bên trong gõ override OnConfiguring -> tab -> tự gen ra code
     override OnModelCreating -> tab -> tự gen ra code
 
-    <details>
-    <summary><strong>hoặc ấn vào đây và copy đoạn sau:</strong></summary>
+        <details>
+        <summary><strong>hoặc ấn vào đây và copy đoạn sau:</strong></summary>
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            {
+                base.OnConfiguring(optionsBuilder);
+            }
+
+            protected override void OnModelCreating(ModelBuilder modelBuilder)
+            {
+                base.OnModelCreating(modelBuilder);
+            }
+
+        </details>
+
+    3. thêm đoạn code sau vào đầu class EduDbContext:
+
+        public EduDbContext() : base()
         {
-            base.OnConfiguring(optionsBuilder);
+
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        public EduDbContext(DbContextOptions<EduDbContext> options) : base(options) 
         {
-            base.OnModelCreating(modelBuilder);
+            
         }
 
-    </details>
-
-    rồi thêm dòng:
-
+    4. rồi thêm dòng:
         modelBuilder.Entity<Class>();
 
-    ở trong OnModelCreating để được đoạn như sau:
+        ở trong OnModelCreating để được đoạn như sau:
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Class>();
-        }
+            protected override void OnModelCreating(ModelBuilder modelBuilder)
+            {
+                base.OnModelCreating(modelBuilder);
+                modelBuilder.Entity<Class>();
+            }
 
-    -
+    5. thêm dòng code sau vào trong class EduDbContext:
+
+        public DbSet<Class> classes { get; set; }
+
+        <details>
+        <summary><strong>để được đoạn class như sau: </strong></summary>
+
+            public class EduDbContext : DbContext
+            {
+                protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+                {
+                    base.OnConfiguring(optionsBuilder);
+                }
+
+                protected override void OnModelCreating(ModelBuilder modelBuilder)
+                {
+                    base.OnModelCreating(modelBuilder);
+                    modelBuilder.Entity<Class>();
+                }
+
+                public DbSet<Class> classes { get; set; }
+
+            }
+
+        </details>
+
+    6. sau đó vào file Program.cs để thêm chuỗi kết nối:
+        - đổi kiểu viết thành main
+        - sửa đoạn code:
+
+            var builder = WebApplication.CreateBuilder(args);
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
+            
+        thành:
+
+            var builder = WebApplication.CreateBuilder(args);
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=democonnect;Trusted_Connection=True;TrustServerCertificate=True;";
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<EduDbContext>(options => options.UseSqlServer(connectionString));
+
+        đoạn connectionString lấy dựa trên trang https://www.connectionstrings.com/sql-server/. sau đó lựa chọn đoạn mã phù hợp
+
+        *** lưu ý trong ssms khi kết nối thì cần trust server certificate không thì sẽ bị lỗi kết nối
+        
+    7. 
+
+
+
 
 ---
 
