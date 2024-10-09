@@ -43,6 +43,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
+
+{
     [Route("/product2")]        <------ hoặc  [Route("product2")] đều thấy chạy bth
     public class ProductController : Controller
     {
@@ -55,9 +57,11 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-
     }
 }
+    
+}
+
 
 - hot reload: sửa lại giao diện thì ấn vào giúp load lại mà không cần phải chạy lại debug -> giúp tích kiệm thời gian
 
