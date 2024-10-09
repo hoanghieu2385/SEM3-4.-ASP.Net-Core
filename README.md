@@ -40,9 +40,10 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 - tạo controller: chuột phải trong solution explorer -> add -> controller
 - tạo view kiểu tự sinh code: trong hàm tạo (dòng 7 -> 10) -> chuột phải -> add view... -> chọn kiểu view cần chọn
 
-- ta có thể sửa đổi url thấy bằng cách:
+    <details>
+    <summary>__ta có thể sửa đổi url thấy bằng cách ấn vào đây để xem:__</summary>
 
-      using Microsoft.AspNetCore.Mvc;
+        using Microsoft.AspNetCore.Mvc;
 
       namespace WebApplication1.Controllers
 
@@ -61,6 +62,8 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
               }
           }
       }
+
+    </details>
 
 - hot reload: sửa lại giao diện thì ấn vào giúp load lại mà không cần phải chạy lại debug -> giúp tích kiệm thời gian
 
@@ -93,7 +96,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
     override OnModelCreating -> tab -> tự gen ra code
 
     <details>
-    <summary>hoặc ấn vào đây và copy đoạn sau:</summary>
+    <summary>__hoặc ấn vào đây và copy đoạn sau:__</summary>
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
