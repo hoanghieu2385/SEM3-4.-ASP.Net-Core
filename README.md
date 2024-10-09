@@ -92,11 +92,11 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
   1.  tạo ra 1 file class.cs trong Models:
 
-            public class Class
-            {
-                public int Id { get; set; }
-                public string ClassName { get; set; }
-            }
+      public class Class
+      {
+      public int Id { get; set; }
+      public string ClassName { get; set; }
+      }
 
   2.  tạo ra 1 file EduDbContext ở ngoài, kế thừa DbContext
       bên trong gõ override OnConfiguring -> tab -> tự gen ra code
