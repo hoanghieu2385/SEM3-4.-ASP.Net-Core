@@ -10,7 +10,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
 ---
 
-Buổi 1:
+### Buổi 1: tạo project đơn giản
 
 - Tìm hiểu nuget packages
 
@@ -30,13 +30,13 @@ Buổi 1:
 - hàm huỷ trong c#: ~TênClass() ->> nhưng ít cần vì c# tự động dọn dẹp bộ nhớ (GC - Garbage Collector)
 
 - tìm hiểu các phím tắt strong VS: f5, shift f5, f9, f10, shift f10, f11, shift f11
-  - F5: _chạy_ debug hoặc chạy (continue) tiếp code
-  - Shift + F5: _Dừng_ Debug
-  - F9: _Đặt hoặc xoá_ 1 breakpoint ở dòng code hiện tại
-  - F10: Bước qua (_step over_): thực hiện đoạn mã mà không đi qua bất kì phương thức nào được gọi
-  - Shift + F10: Bước ra (_step out_): thực hiện các bước mã cho đến khi kết thúc phương thức hiện tại
-  - F11: Bước vào (_step info_): thực hiện 1 bước code, nếu có phương thức nào được gọi thì sẽ được đi vào phương thức đó
-  - Shift + F11: Bước qua (_step over_) trong quá trình debug _giống F10_: nếu đang ở cuối phương thức thì sẽ thoát khỏi phương thức đó
+  - F5: **chạy** debug hoặc chạy (continue) tiếp code
+  - Shift + F5: **Dừng** Debug
+  - F9: **Đặt hoặc xoá** 1 breakpoint ở dòng code hiện tại
+  - F10: Bước qua (**step over**): thực hiện đoạn mã mà không đi qua bất kì phương thức nào được gọi
+  - Shift + F10: Bước ra (**step out**): thực hiện các bước mã cho đến khi kết thúc phương thức hiện tại
+  - F11: Bước vào (**step info**): thực hiện 1 bước code, nếu có phương thức nào được gọi thì sẽ được đi vào phương thức đó
+  - Shift + F11: Bước qua (**step over**) trong quá trình debug **giống F10**: nếu đang ở cuối phương thức thì sẽ thoát khỏi phương thức đó
 - tạo controller: chuột phải trong solution explorer -> add -> controller
 - tạo view kiểu tự sinh code: trong hàm tạo (dòng 7 -> 10) -> chuột phải -> add view... -> chọn kiểu view cần chọn
 
@@ -54,7 +54,7 @@ Buổi 1:
               {
                   return View();
               }
-              [HttpGet("detail")]     <------
+              [HttpGet("detail")]     <------ cần dòng này để lấy trang detail khi đổi sang tên route mới
               public IActionResult Detail()
               {
                   return View();
@@ -75,6 +75,51 @@ Buổi 1:
   - routes
 
 ---
+
+### Buổi 2: kết nối project với database
+
+- Entity framework là gì?
+
+- chuẩn bị, cài trước các nuget:
+
+  - Microsoft.EntityFrameworkCore.Tools
+  - Microsoft.EntityFrameworkCore.SqlServer
+
+- các bước tạo project:
+
+  1. tạo ra 1 file class.cs trong Models
+  2. tạo ra 1 file EduDbContext ở ngoài, kế thừa DbContext
+    bên trong gõ override OnConfiguring -> tab -> tự gen ra code
+    override OnModelCreating -> tab -> tự gen ra code
+
+    <details>
+    <summary>hoặc ấn vào đây và copy đoạn sau:</summary>
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
+    </details>
+
+    rồi thêm dòng:
+
+        modelBuilder.Entity<Class>();
+
+    ở trong OnModelCreating để được đoạn như sau:
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Class>();
+        }
+
+    -
 
 ---
 
