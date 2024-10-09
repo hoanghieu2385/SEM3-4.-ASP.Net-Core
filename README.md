@@ -41,7 +41,6 @@ Buổi 1:
 - tạo view kiểu tự sinh code: trong hàm tạo (dòng 7 -> 10) -> chuột phải -> add view... -> chọn kiểu view cần chọn
 
 - ta có thể sửa đổi url thấy bằng cách:
-  {
 
       using Microsoft.AspNetCore.Mvc;
 
@@ -62,8 +61,6 @@ Buổi 1:
               }
           }
       }
-
-}
 
 - hot reload: sửa lại giao diện thì ấn vào giúp load lại mà không cần phải chạy lại debug -> giúp tích kiệm thời gian
 
