@@ -44,21 +44,21 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApplication1.Controllers
 {
 
-{
-    [Route("/product2")]        <------ hoặc  [Route("product2")] đều thấy chạy bth
-    public class ProductController : Controller
     {
-        public IActionResult Index()
+        [Route("/product2")]        <------ hoặc  [Route("product2")] đều thấy chạy bth
+        public class ProductController : Controller
         {
-            return View();
-        }
-        [HttpGet("detail")]     <------
-        public IActionResult Detail()
-        {
-            return View();
+            public IActionResult Index()
+            {
+                return View();
+            }
+            [HttpGet("detail")]     <------
+            public IActionResult Detail()
+            {
+                return View();
+            }
         }
     }
-}
     
 }
 
