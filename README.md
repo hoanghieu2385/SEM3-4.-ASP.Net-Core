@@ -195,7 +195,9 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
   8.  tạo trang CURD nhanh:
 
-            chuột phải folder controller -> add -> Controller... -> chọn MVC Controller with views, using Entity Framework -> Add -> Chọn Model class cần tạo -> xem có cần chỉnh tên không -> Add
+                chuột phải folder controller -> add -> Controller...
+                -> chọn MVC Controller with views, using Entity Framework -> Add
+                -> Chọn Model class cần tạo -> xem có cần chỉnh tên không -> Add
 
 ---
 
