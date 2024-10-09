@@ -131,7 +131,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
   4.  rồi thêm dòng:
 
-        modelBuilder.Entity<Class>();
+            modelBuilder.Entity<Class>();
 
       ở trong OnModelCreating để được đoạn như sau:
 
