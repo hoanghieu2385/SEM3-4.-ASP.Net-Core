@@ -41,7 +41,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 - tạo view kiểu tự sinh code: trong hàm tạo (dòng 7 -> 10) -> chuột phải -> add view... -> chọn kiểu view cần chọn
 
     <details>
-    <summary>__ta có thể sửa đổi url thấy bằng cách ấn vào đây để xem:__</summary>
+    <summary><strong>ta có thể sửa đổi url thấy bằng cách ấn vào đây để xem:</strong></summary>
 
         using Microsoft.AspNetCore.Mvc;
 
@@ -96,7 +96,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
     override OnModelCreating -> tab -> tự gen ra code
 
     <details>
-    <summary>__hoặc ấn vào đây và copy đoạn sau:__</summary>
+    <summary><strong>hoặc ấn vào đây và copy đoạn sau:</strong></summary>
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
