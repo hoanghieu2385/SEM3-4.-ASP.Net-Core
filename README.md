@@ -190,8 +190,8 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
   7.  chạy 2 lệnh sau để :
 
-        dotnet ef migrations add CaiNayCanDoiSauMoiLanChay
-        dotnet ef database update
+            dotnet ef migrations add CaiNayCanDoiSauMoiLanChay
+            dotnet ef database update
 
   8.  tạo trang CURD nhanh:
 
