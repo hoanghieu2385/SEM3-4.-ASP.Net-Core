@@ -65,6 +65,15 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
     </details>
 
+- Cách thêm button link ở header trong file layout:
+
+      <li class="nav-item">
+          <a class="nav-link text-dark" asp-area="" asp-controller="Classes" asp-action="Index">Class</a>
+      </li>
+
+      // classes là controller, tên đầy đủ là ClassesController.cs
+      // Index là trong folder View -> Index.cshtml <hoặc đổi thành file muốn hiển thị tuỳ ý>
+
 - hot reload: sửa lại giao diện thì ấn vào giúp load lại mà không cần phải chạy lại debug -> giúp tích kiệm thời gian
 
 - tìm hotkey hay dùng trên visual studio
@@ -175,7 +184,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
       - đổi kiểu viết thành main:
 
-            Để con trỏ chuột ở dòng đầu tiên 
+            Để con trỏ chuột ở dòng đầu tiên
             -> ấn vào hình bóng đèn (hoặc dùng phím tắt alt + enter hoặc ctrl + .)
             -> chọn convert to 'Program.Main' style program
 
@@ -201,16 +210,14 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
           cd đến project
 
-        Xử lý lỗi không nhận diện dotnet-ef:
+      Xử lý lỗi không nhận diện dotnet-ef:
 
           dotnet tool install --global dotnet-ef
 
-        về sau chỉ cần chạy 2 lệnh dưới đây nếu đã chạy lệnh ở trên 1 lần:
+      về sau chỉ cần chạy 2 lệnh dưới đây nếu đã chạy lệnh ở trên 1 lần:
 
           dotnet ef migrations add CaiNayCanDoiSauMoiLanChay
           dotnet ef database update
-
-
 
   9.  tạo trang CURD nhanh:
 
