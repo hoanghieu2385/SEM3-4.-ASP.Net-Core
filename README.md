@@ -200,10 +200,10 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
           cd đến project
 
         Xử lý lỗi không nhận diện dotnet-ef:
-        
+
             =>	dotnet tool install --global dotnet-ef
 
-        về sau cần chạy 2 lệnh dưới đây:
+        về sau chỉ cần chạy 2 lệnh dưới đây nếu đã chạy lệnh ở trên 1 lần:
 
           dotnet ef migrations add CaiNayCanDoiSauMoiLanChay
           dotnet ef database update
