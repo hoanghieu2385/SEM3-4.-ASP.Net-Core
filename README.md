@@ -203,7 +203,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
         Xử lý lỗi không nhận diện dotnet-ef:
 
-            =>	dotnet tool install --global dotnet-ef
+          dotnet tool install --global dotnet-ef
 
         về sau chỉ cần chạy 2 lệnh dưới đây nếu đã chạy lệnh ở trên 1 lần:
 
