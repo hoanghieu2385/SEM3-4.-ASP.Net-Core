@@ -173,7 +173,10 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
   7.  sau đó vào file **Program.cs** để thêm chuỗi kết nối:
 
-      - đổi kiểu viết thành main
+      - đổi kiểu viết thành main:
+
+            Để con trỏ chuột ở dòng đầu tiên -> ấn vào hình bóng đèn ->  
+
       - sửa đoạn code:
 
             var builder = WebApplication.CreateBuilder(args);
@@ -192,10 +195,20 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
       \*\*\* lưu ý trong ssms khi kết nối thì cần trust server certificate không thì sẽ bị lỗi kết nối
 
-  8.  chạy 2 lệnh sau để :
+  8.  chạy các lệnh sau để update db trong terminal:
+
+          cd đến project
+
+        Xử lý lỗi không nhận diện dotnet-ef:
+        
+            =>	dotnet tool install --global dotnet-ef
+
+        về sau cần chạy 2 lệnh dưới đây:
 
           dotnet ef migrations add CaiNayCanDoiSauMoiLanChay
           dotnet ef database update
+
+
 
   9.  tạo trang CURD nhanh:
 
