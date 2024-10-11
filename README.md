@@ -169,7 +169,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
   6.  Create Database: vào ssms -> connect -> new query:
 
-            CREATE DATABASE TenDatabase
+          CREATE DATABASE TenDatabase
 
   7.  sau đó vào file **Program.cs** để thêm chuỗi kết nối:
 
