@@ -175,7 +175,9 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
       - đổi kiểu viết thành main:
 
-            Để con trỏ chuột ở dòng đầu tiên -> ấn vào hình bóng đèn ->  
+            Để con trỏ chuột ở dòng đầu tiên 
+            -> ấn vào hình bóng đèn (hoặc dùng phím tắt alt + enter hoặc ctrl + .)
+            -> chọn convert to 'Program.Main' style program
 
       - sửa đoạn code:
 
