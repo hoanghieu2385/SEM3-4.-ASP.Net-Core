@@ -167,7 +167,11 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
       </details>
 
-  6.  sau đó vào file **Program.cs** để thêm chuỗi kết nối:
+    6. Create Database: vào ssms -> connect -> new query:
+
+        CREATE DATABASE TenDatabase
+
+  7.  sau đó vào file **Program.cs** để thêm chuỗi kết nối:
 
       - đổi kiểu viết thành main
       - sửa đoạn code:
@@ -188,19 +192,19 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 
       \*\*\* lưu ý trong ssms khi kết nối thì cần trust server certificate không thì sẽ bị lỗi kết nối
 
-  7.  chạy 2 lệnh sau để :
+  8.  chạy 2 lệnh sau để :
 
           dotnet ef migrations add CaiNayCanDoiSauMoiLanChay
           dotnet ef database update
 
-  8.  tạo trang CURD nhanh:
+  9.  tạo trang CURD nhanh:
 
           chuột phải folder controller -> add -> Controller...
           -> chọn MVC Controller with views, using Entity Framework -> Add
           -> Chọn Model class cần tạo -> xem có cần chỉnh tên không -> Add
 
 ---
-
+### Buổi 3: 
 ---
 
 ---
