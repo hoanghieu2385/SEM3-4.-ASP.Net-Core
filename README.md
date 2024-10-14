@@ -71,7 +71,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
           <a class="nav-link text-dark" asp-area="" asp-controller="Classes" asp-action="Index">Class</a>
       </li>
 
-      // classes là controller, tên đầy đủ là ClassesController.cs
+      // classes là controller, tên đầy đủ là ClassesController.cs ?? Hoặc là tên folder?????
       // Index là trong folder View -> Index.cshtml <hoặc đổi thành file muốn hiển thị tuỳ ý>
 
 - hot reload: sửa lại giao diện thì ấn vào giúp load lại mà không cần phải chạy lại debug -> giúp tích kiệm thời gian
@@ -228,7 +228,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 ---
 
 ### Buổi 3:
-
+- Html Helper   
 ---
 
 ---

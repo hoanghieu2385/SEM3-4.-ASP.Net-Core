@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model WebApplication1.Models.Student
+
+<div class="row">
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Age" class="form-label"></label>
+            <input asp-for="Age" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" />
+            <a asp-action="Index">Back</a>
+        </div>
+    </form>
+</div>
