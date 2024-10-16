@@ -247,9 +247,20 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 ### Buổi 4:
 - DTO (Data transfer object)
 - Relation ship 
-
-
-
 ---
+### Buổi 5:
+- Layout (tìm hiểu và thử áp dụng các template)
+- view start.cshtml
+- Annotations <trong sách có, tìm hiểu>
+- security, authentication <khi tạo project cũng có thể tạo được luôn, tìm hiểu để áp dụng bên ngoài vào >
+- Partial views 
+- 
+- 
+- BTVN:
+    + tạo 1 layout mới
+    + áp dụng template
+
+** không bỏ @RenderBody() trong Layout <vì nếu bỏ đi sẽ không render được body của trang>
+
 
 ---
