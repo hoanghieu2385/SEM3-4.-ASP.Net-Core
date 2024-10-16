@@ -228,8 +228,27 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 ---
 
 ### Buổi 3:
-- Html Helper   
+- Html Helper
+- Tìm hiểu luồng code
+- Tạo thêm 1 controller student bằng cách tự code
+- Tương tác từ controller tới model, từ controller tới view
+- Từ controller -> view:    
+    1. Cách 1: Strongly typed
+    2. Cách 2: View Bag
+    3. Cách 3: View Data
+    4. TempData <Ít dùng>
+- Điểm khác giữa View Data và view Bag
+    + View Data:
+        - Dictionary (Dấu hiệu : Key - Value)
+    + View Bag
+        - Object (dấu hiệu là dấu .)
+
 ---
+### Buổi 4:
+- DTO (Data transfer object)
+- Relation ship 
+
+
 
 ---
 

@@ -54,15 +54,20 @@ namespace WebApplication1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClassName,RoomName")] Class @class)
+        public async Task<IActionResult> Create(DTO.CreateClassDTO classDTO)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(@class);
+                Class createClass = new Class()
+                {
+                    ClassName = classDTO.ClassName,
+                    RoomName = classDTO.RoomName
+                };
+                _context.Add(createClass);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(@class);
+            return View(new Class());
         }
 
         // GET: Classes/Edit/5

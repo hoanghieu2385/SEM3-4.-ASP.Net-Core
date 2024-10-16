@@ -11,7 +11,7 @@ internal class Program
         builder.Services.AddControllersWithViews();
         builder.Services.AddDbContext<EduDbContext>(options => options.UseSqlServer(connectionString));
 
-var app = builder.Build();
+        var app = builder.Build();
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())

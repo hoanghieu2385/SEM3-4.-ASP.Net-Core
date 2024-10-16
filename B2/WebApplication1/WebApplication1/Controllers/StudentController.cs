@@ -8,8 +8,8 @@ namespace WebApplication1.Controllers
     {
         private readonly EduDbContext eduDbContext;
         // Buoc 1: tiem phu thuoc. su dung DI
-        
-        public StudentController(EduDbContext eduDbContext) 
+
+        public StudentController(EduDbContext eduDbContext)
         {
             this.eduDbContext = eduDbContext;
         }
@@ -39,7 +39,8 @@ namespace WebApplication1.Controllers
             if (id == null)
             {
                 return View();
-            } else
+            }
+            else
             {
                 var student = this.eduDbContext.students.SingleOrDefault(x => x.Id == id);
                 return View();
