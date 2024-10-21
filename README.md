@@ -355,6 +355,7 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a>
         </li>
+    chú ý là cần chỉ rõ tới area: asp-area="Admin"
 
 - Cách tạo Project Web API
   - tạo new project -> tìm api và chọn web api
