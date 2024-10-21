@@ -228,41 +228,48 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 ---
 
 ### Buổi 3:
+
 - Html Helper
 - Tìm hiểu luồng code
 - Tạo thêm 1 controller student bằng cách tự code
 - Tương tác từ controller tới model, từ controller tới view
-- Từ controller -> view:    
-    1. Cách 1: Strongly typed
-    2. Cách 2: View Bag
-    3. Cách 3: View Data
-    4. TempData <Ít dùng>
+- Từ controller -> view:
+  1. Cách 1: Strongly typed
+  2. Cách 2: View Bag
+  3. Cách 3: View Data
+  4. TempData <Ít dùng>
 - Điểm khác giữa View Data và view Bag
-    + View Data:
-        - Dictionary (Dấu hiệu : Key - Value)
-    + View Bag
-        - Object (dấu hiệu là dấu .)
+  - View Data:
+    - Dictionary (Dấu hiệu : Key - Value)
+  - View Bag
+    - Object (dấu hiệu là dấu .)
 
 ---
+
 ### Buổi 4:
+
 - DTO (Data transfer object)
-- Relation ship 
+- Relation ship
+
 ---
+
 ### Buổi 5:
+
 - Layout (tìm hiểu và thử áp dụng các template)
 - view start.cshtml
 - Annotations <trong sách có, tìm hiểu>
 - security, authentication <khi tạo project cũng có thể tạo được luôn, tìm hiểu để áp dụng bên ngoài vào >
-- Partial views 
-- 
-- 
+- Partial views
+-
+-
 - BTVN:
-    + tạo 1 layout mới
-    + áp dụng template
+  - tạo 1 layout mới
+  - áp dụng template
 
-** không bỏ @RenderBody() trong Layout <vì nếu bỏ đi sẽ không render được body của trang>
----
+## \*\* không bỏ @RenderBody() trong Layout <vì nếu bỏ đi sẽ không render được body của trang>
+
 ### Buổi 6:
+
 - Viết store procedure
 - tạo model StudentReport
 - DbContext thêm StudentReport.hasnoekey()
@@ -273,45 +280,48 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 <details>
       <summary><strong>để được đoạn store procedure như sau: </strong></summary>
 
-    USE SEM3_EDU;
-    GO
+        USE SEM3_EDU;
+        GO
 
-    CREATE PROCEDURE GetAllStudent
-    AS
-    BEGIN
-        SELECT a.StudentId,
-            b.Name AS StudentName,
-            b.Age,
-            b.Address,
-            a.CourseId,
-            c.Name AS CourseName,
-            d.ClassName
-        FROM dbo.StudentCourse a
-        LEFT JOIN dbo.Students b ON b.id = a.StudentId
-        LEFT JOIN dbo.Courses c ON c.Id = a.CourseId
-        LEFT JOIN dbo.Classes d ON d.Id = b.ClassId;
-    END;
-    GO
+        CREATE PROCEDURE GetAllStudent
+        AS
+        BEGIN
+            SELECT a.StudentId,
+                b.Name AS StudentName,
+                b.Age,
+                b.Address,
+                a.CourseId,
+                c.Name AS CourseName,
+                d.ClassName
+            FROM dbo.StudentCourse a
+            LEFT JOIN dbo.Students b ON b.id = a.StudentId
+            LEFT JOIN dbo.Courses c ON c.Id = a.CourseId
+            LEFT JOIN dbo.Classes d ON d.Id = b.ClassId;
+        END;
+        GO
 
-    EXEC GetAllStudent;
-    GO
+        EXEC GetAllStudent;
+        GO
 
 </details>
 
 ---
-### Buổi 7:
-- Action
-    + IActionResult
-    + File result
-- API:
-    + restful API -> json/xml
-    + SOAP -> xml
-- Tạo area 
-- 
-- 
-- 
-- 
-- 
 
---- 
+### Buổi 7:
+
+- Action
+  - IActionResult
+  - File result
+- API:
+  - restful API -> json/xml
+  - SOAP -> xml
+- Tạo area
+-
+-
+-
+-
+-
+
+---
+
 ### Buổi :
