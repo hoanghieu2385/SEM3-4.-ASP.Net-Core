@@ -6,6 +6,6 @@ Xử lý lỗi không nhận diện dotnet-ef:
 dotnet tool install --global dotnet-ef
 
 
-dotnet ef migrations add InitialCreate
+dotnet ef migrations add CaiTenNayCanDoiSauMoiLanChay
 
 dotnet ef database update

@@ -11,23 +11,36 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class StudentController : Controller
+    public class StudentCourseController : Controller
     {
         private readonly EduDbContext _context;
 
-        public StudentController(EduDbContext context)
+        public StudentCourseController(EduDbContext context)
         {
             _context = context;
         }
 
-        // GET: Student
+        // GET: StudentCourse
         public async Task<IActionResult> Index()
         {
-            var eduDbContext = _context.Students.Include(s => s.Class);
-            return View(await eduDbContext.ToListAsync());
+            var studentReport = _context.studentReports.FromSqlRaw("GetAllStudent", new string[] { });
+
+            var getStudent = new List<GetStudentReportDto>();
+            foreach (var student in studentReport)
+            {
+                getStudent.Add(new GetStudentReportDto()
+                {
+                    StudentName = student.StudentName,
+                    Age = student.Age,
+                    Address = student.Address,
+                    CourseName = student.CourseName,
+                    ClassName = student.ClassName
+                });
+            }
+            return View( getStudent);
         }
 
-        // GET: Student/Details/5
+        // GET: StudentCourse/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,49 +48,39 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
 
-            var student = await _context.Students
-                .Include(s => s.Class)
+            var studentCourse = await _context.StudentCourses
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (student == null)
+            if (studentCourse == null)
             {
                 return NotFound();
             }
 
-            return View(student);
+            return View(studentCourse);
         }
 
-        // GET: Student/Create
+        // GET: StudentCourse/Create
         public IActionResult Create()
         {
-            ViewData["ClassId"] = new SelectList(_context.Classes, "Id", "Id");
             return View();
         }
 
-        // POST: Student/Create
+        // POST: StudentCourse/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CreateStudentsDTO studentsDTO)
+        public async Task<IActionResult> Create([Bind("Id,StudentId,CourseId")] StudentCourse studentCourse)
         {
             if (ModelState.IsValid)
             {
-                var _student = new Student()
-                {
-                    Name = studentsDTO.Name,
-                    Age = studentsDTO.Age,
-                    Address = studentsDTO.Address,
-                    ClassId = studentsDTO.ClassId
-                };
-                _context.Add(_student);
+                _context.Add(studentCourse);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClassId"] = new SelectList(_context.Classes, "Id", "ClassName", studentsDTO.ClassId);
-            return View(studentsDTO);
+            return View(studentCourse);
         }
 
-        // GET: Student/Edit/5
+        // GET: StudentCourse/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -85,23 +88,22 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
 
-            var student = await _context.Students.FindAsync(id);
-            if (student == null)
+            var studentCourse = await _context.StudentCourses.FindAsync(id);
+            if (studentCourse == null)
             {
                 return NotFound();
             }
-            ViewData["ClassId"] = new SelectList(_context.Classes, "Id", "Id", student.ClassId);
-            return View(student);
+            return View(studentCourse);
         }
 
-        // POST: Student/Edit/5
+        // POST: StudentCourse/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Age,Address,ClassId")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,StudentId,CourseId")] StudentCourse studentCourse)
         {
-            if (id != student.Id)
+            if (id != studentCourse.Id)
             {
                 return NotFound();
             }
@@ -110,12 +112,12 @@ namespace WebApplication1.Controllers
             {
                 try
                 {
-                    _context.Update(student);
+                    _context.Update(studentCourse);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StudentExists(student.Id))
+                    if (!StudentCourseExists(studentCourse.Id))
                     {
                         return NotFound();
                     }
@@ -126,11 +128,10 @@ namespace WebApplication1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClassId"] = new SelectList(_context.Classes, "Id", "Id", student.ClassId);
-            return View(student);
+            return View(studentCourse);
         }
 
-        // GET: Student/Delete/5
+        // GET: StudentCourse/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -138,35 +139,34 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
 
-            var student = await _context.Students
-                .Include(s => s.Class)
+            var studentCourse = await _context.StudentCourses
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (student == null)
+            if (studentCourse == null)
             {
                 return NotFound();
             }
 
-            return View(student);
+            return View(studentCourse);
         }
 
-        // POST: Student/Delete/5
+        // POST: StudentCourse/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var student = await _context.Students.FindAsync(id);
-            if (student != null)
+            var studentCourse = await _context.StudentCourses.FindAsync(id);
+            if (studentCourse != null)
             {
-                _context.Students.Remove(student);
+                _context.StudentCourses.Remove(studentCourse);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool StudentExists(int id)
+        private bool StudentCourseExists(int id)
         {
-            return _context.Students.Any(e => e.Id == id);
+            return _context.StudentCourses.Any(e => e.Id == id);
         }
     }
 }

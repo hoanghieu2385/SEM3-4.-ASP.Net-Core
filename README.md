@@ -261,6 +261,11 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
     + áp dụng template
 
 ** không bỏ @RenderBody() trong Layout <vì nếu bỏ đi sẽ không render được body của trang>
-
-
 ---
+### Buổi 6:
+- Viết store procedure
+- tạo model StudentReport
+- DbContext thêm StudentReport.hasnoekey()
+- controller call store procedure
+- mapper -> view
+- tạo view
