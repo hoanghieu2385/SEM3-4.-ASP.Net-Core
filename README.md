@@ -316,12 +316,63 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
   - restful API -> json/xml
   - SOAP -> xml
 - Tạo area
--
--
--
--
--
+- onion architecture
+- Clean Architecture
+- Cách tạo Area:
 
----
+  - tạo project asp.net core
+  - tạo folder tên areas
+  - click chuột phải vào folder areas và chọn add -> MVC Area -> đặt tên area
+  - tạo controller mới và thêm vào cách phần cần thiết:
+    [Area("Admin")]
+    [Route("Home")]
+    [HttpGet("")]
+    ở trong controller để được đoạn sau:
+    namespace AreaDemo.Areas.Admin.Controllers
+    {
+    [Area("Admin")] <====
+    [Route("Home")] <====
+    public class HomeController : Controller
+    {
+    // GET: HomeController
+    [HttpGet("")] <====
+    public ActionResult Index()
+    {
+    return View();
+    }
+    ... code còn lại
+    }
+    ... code còn lại
+    }
+
+  * copy code trong ScaffoldingReadMe.txt và thêm vào trong file program.cs, thêm vào trước app.Run();
+  * đã hoàn thành, thử chạy vào /admin/home thử
+  * còn muốn add button vào trên header thì vào view -> shared -> \_layout.cshtml và thêm đoạn sau:
+    <li class="nav-item">
+    <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a>
+    </li>
+
+- Cách tạo Project Web API
+  - tạo new project -> tìm api và chọn web api
+  - tạo model Product
+  - tạo ProductController -> ở phần get:
+    public IEnumerable<Product> Get()
+    {
+    List<Product> products = new List<Product>();
+    products.Add(new Product()
+    {
+    Id = 1,
+    Name = "Iphone 13",
+    Description = "Old Product"
+    });
+    products.Add(new Product()
+    { Id = 2,
+    Name = "Iphone 16",
+    Description = "New Product"
+    });
+    return products;
+    }
+-
+- ***
 
 ### Buổi :
