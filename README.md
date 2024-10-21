@@ -355,28 +355,32 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a>
         </li>
+
     chú ý là cần chỉ rõ tới area: asp-area="Admin"
 
 - Cách tạo Project Web API
+
   - tạo new project -> tìm api và chọn web api
   - tạo model Product
   - tạo ProductController -> ở phần get:
-    public IEnumerable<Product> Get()
-    {
-    List<Product> products = new List<Product>();
-    products.Add(new Product()
-    {
-    Id = 1,
-    Name = "Iphone 13",
-    Description = "Old Product"
-    });
-    products.Add(new Product()
-    { Id = 2,
-    Name = "Iphone 16",
-    Description = "New Product"
-    });
-    return products;
-    }
+
+        public IEnumerable<Product> Get()
+        {
+        List<Product> products = new List<Product>();
+        products.Add(new Product()
+        {
+        Id = 1,
+        Name = "Iphone 13",
+        Description = "Old Product"
+        });
+        products.Add(new Product()
+        { Id = 2,
+        Name = "Iphone 16",
+        Description = "New Product"
+        });
+        return products;
+        }
+
 -
 - ***
 
