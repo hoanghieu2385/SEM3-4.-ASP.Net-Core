@@ -269,3 +269,49 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
 - controller call store procedure
 - mapper -> view
 - tạo view
+
+<details>
+      <summary><strong>để được đoạn store procedure như sau: </strong></summary>
+
+          USE SEM3_EDU;
+            GO
+
+            CREATE PROCEDURE GetAllStudent
+            AS
+            BEGIN
+                SELECT a.StudentId,
+                    b.Name AS StudentName,
+                    b.Age,
+                    b.Address,
+                    a.CourseId,
+                    c.Name AS CourseName,
+                    d.ClassName
+                FROM dbo.StudentCourse a
+                LEFT JOIN dbo.Students b ON b.id = a.StudentId
+                LEFT JOIN dbo.Courses c ON c.Id = a.CourseId
+                LEFT JOIN dbo.Classes d ON d.Id = b.ClassId;
+            END;
+            GO
+
+            EXEC GetAllStudent;
+            GO
+
+</details>
+
+---
+### Buổi 7:
+- Action
+    + IActionResult
+    + File result
+- API:
+    + restful API -> json/xml
+    + SOAP -> xml
+- Tạo area 
+- 
+- 
+- 
+- 
+- 
+
+--- 
+### Buổi :
