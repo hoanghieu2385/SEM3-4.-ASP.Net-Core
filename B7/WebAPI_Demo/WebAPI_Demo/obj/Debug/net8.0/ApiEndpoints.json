@@ -145,22 +145,16 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "student",
+        "Type": "WebAPI_Demo.Models.Student",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "WebAPI_Demo.Controllers.StudentController",
-    "Method": "Get",
+    "Method": "GetById",
     "RelativePath": "api/Student/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -172,17 +166,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "WebAPI_Demo.Controllers.StudentController",

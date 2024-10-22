@@ -26,15 +26,29 @@ namespace WebAPI_Demo.Controllers
 
         // GET api/<StudentController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult GetById([FromRoute] int id)
         {
-            return "value";
+            var student = context.Students.Find(id);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return Ok(student);
         }
 
         // POST api/<StudentController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] Student student)
         {
+            if(!ModelState.IsValid)
+            {
+                return (BadRequest(ModelState));
+            }
+            context.Students.Add(student);
+            context.SaveChanges();
+
+            return CreatedAtAction("GetById", new { id = student.Id }, student);
         }
 
         // PUT api/<StudentController>/5
