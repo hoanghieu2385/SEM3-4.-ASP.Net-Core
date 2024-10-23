@@ -381,7 +381,29 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
         return products;
         }
 
--
-- ***
+- API database:
 
-### Buổi :
+  - connect như bình thường
+  - trong controller:
+
+    - khai báo biến, constructor:
+
+      private readonly EduDbContext context;
+      public StudentController(EduDbContext context)
+      {
+      this.context = context;
+      }
+
+    - chỉnh sửa lại phần get thành:
+
+      public IEnumerable<Student> Get()
+      {
+      List<Student> students = new List<Student>();
+      students = this.context.Students.ToList();
+
+          return students;
+
+      }
+
+
+### Buổi 8:
