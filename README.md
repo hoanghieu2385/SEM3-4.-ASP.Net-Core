@@ -403,4 +403,4 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
             return students;
           }
 
-### Buổi 8:
+### Buổi 8: bắt đầu làm mock project 3
