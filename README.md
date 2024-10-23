@@ -401,9 +401,8 @@ Chuẩn bị cho môn: asp .net core theo mô hình MVC (Môn quan trọng)
       List<Student> students = new List<Student>();
       students = this.context.Students.ToList();
 
-          return students;
+            return students;
 
       }
-
 
 ### Buổi 8:
